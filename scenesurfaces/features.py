@@ -183,7 +183,7 @@ def compute_distance_orientation_bins(normals,
                     idx += n_norm_bins
         # Do sky channel(s) after last depth channel, add (n tiles) sky channels
         if sky_channel and (np.max(dist_bin_edges) < np.inf):
-            dSky = z >= dist_bin_edges(-1)
+            dSky = z >= dist_bin_edges[-1]
             skyidx = np.arange((n_dims - n_tiles), n_dims)
             tmp = np.zeros((n_bins_y, n_bins_x))
             for x_st, x_fin in zip(bins_x[:-1], bins_x[1:]):
